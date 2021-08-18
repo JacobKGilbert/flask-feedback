@@ -39,3 +39,16 @@ class LoginForm(FlaskForm):
         "Password",
         validators=[InputRequired(), Length(min=6, max=55)],
     )
+
+
+class FeedbackForm(FlaskForm):
+    """Add/Edit feedback form."""
+
+    title = StringField(
+        "Title",
+        validators=[InputRequired(), Length(max=100)],
+    )
+    content = StringField(
+        "Content",
+        validators=[InputRequired()],
+    )

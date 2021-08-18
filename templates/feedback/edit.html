@@ -1,19 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}
-Register New User
-{% endblock %}
+{% block title %}Edit Feedback{% endblock %}
 
 {% block content %}
 
-<h1>Register</h1>
+<h1>Edit Feedback</h1>
 
-<form method="POST">
+<form method="POST" action="/feedback/{{feedback.id}}/update">
 
   {{form.hidden_tag()}}
 
   {% for field in form.errors %}
-  <div class="alert alert-danger">{{ field }}:
+  <div class="alert alert-danger">
+    {{ field }}:
     <ul>
       {% for error in form.errors[field] %}
       <li>{{ error }}</li>
@@ -33,7 +32,7 @@ Register New User
 
   {% endfor %}
 
-  <button class="btn btn-primary">Register!</button>
+  <button class="btn btn-primary">Edit!</button>
 </form>
 
 {% endblock %}

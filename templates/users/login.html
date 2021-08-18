@@ -24,9 +24,9 @@ Login User
   {% for field in form if field.widget.input_type != 'hidden' %}
 
   <div class="form-group row">
-    {{field.label(class="col-sm-2 col-form-label")}}
+    {{field.label(class_="col-sm-2 col-form-label")}}
     <div class="col-sm-10">
-      {{field(class="form-control")}}
+      {{field(class_="form-control")}}
     </div>
   </div>
 
