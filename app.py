@@ -68,3 +68,11 @@ def login():
             return render_template("users/login.html", form=form)
 
     return render_template("users/login.html", form=form)
+
+
+@app.route("/logout")
+def logout():
+    """Logout route."""
+
+    session.pop("username")
+    return redirect("/")
